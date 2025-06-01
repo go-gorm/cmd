@@ -33,7 +33,7 @@ var methodExpectedLines = map[string][]string{
 		"params = append(params, user.Name)",
 		"}",
 	},
-	"Update": {
+	"UpdateInfo": {
 		"var sb strings.Builder",
 		"params := make([]any, 0, 4)",
 		`sb.WriteString("UPDATE ?")`,
