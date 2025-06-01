@@ -56,7 +56,7 @@ func TestGeneratorWithQueryInterface(t *testing.T) {
 		t.Errorf("generated code %s has invalid Go syntax: %v", generatedFile, err)
 	}
 
-	if goldenStr[strings.Index(goldenStr, "\n"):] != generatedStr[strings.Index(generatedStr, "\n"):] {
+	if strings.Replace(goldenStr, "package output", "", 1) != strings.Replace(generatedStr, "package examples", "", 1) {
 		t.Errorf("generated file differs from golden file\nGOLDEN: %s\nGENERATED: %s\n %s",
 			goldenPath, generatedFile, generatedStr)
 	}
